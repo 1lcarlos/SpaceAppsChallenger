@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>propuesta calidad del aire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>    
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin="">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  
+    
+  
+  
+    </head>
+<body>
+    <header class="inicio">
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="#">C&CMAPS
+                </a>
+                <nav class="navegacion">
+                    
+                    
+                    <a href="https://covid19.spaceappschallenge.org/challenges/covid-challenges/quiet-planet/details" target="blank">SpaceAppsChallenge</a>
+                  <!-- 
+                    <li>contacto</li>
+                    <li>Mas Informacion</li>
+                    <li>Foro</li>
+
+                  -->  
+                </nav>
+            </div>
+            <div class="contenedor-titulo">
+                <h1></h1>
+            </div>
+
+        </div> <!--fin del contenedor-->      
+       
+      </header>
+      <main>
+        <section class="">
+          <div class="main">
+              <div class="icono-main">
+                  <div class="contenedor2 contenido-lateral">
+                      <h3 class="fw_400 center"></h3>
+                      <p>La siguiente aplicacion muestra el seguimiento que se le a hecho a 
+                          distintos indices sobre las condiciones atmosferias y de calidad del aire. 
+                         En el primer mapa podras encontrar  el modelo troposferico del satelite Sentinel 5p, 
+                        este muestra como las emisions de NO2 han venido disminuñendo desde el inicio de la cuarentena
+                     en los diferentes paises, tomando como punto de referencia las principales potencias industriales. CHINA, AMERICA y EUROPA </p>  
+                      
+                     <p>En el siguiente mapa se muestra la ubicacion de las estaciones que se utilizan para el monitore de la calidad
+                        del aire en distintos paises y ciudades del mundo, asi como tambien los principales niveles de contaminacion
+                        en los cuales se basa el estándar Instant-Cast de la EPA(Agencias de Protección Ambiental) de EE. UU . 
+                    </p>
+                     
+                     <h3 class="fw_400 center">Mapa de concentraciones troposfericas de NO2 periodicas promediadas durante 14 dias</h3>
+                      <div id="map"></div>
+                      <button id = "CHINA"  value="34,115"> CHINA</button>
+                      <button id = "AMERICA"  value="0,-74"> AMERICA</button>
+                      <button id = "EUROPA"  value="52,17"> EUROPA</button>
+                        <div class="navigation">
+                        <button id="nav-left-button" type="button" class="btn btn-align-right" onclick="gotoPrevLayer()"><i class="fa fa-chevron-left"></i></button><button id="timeref" class="nav-ref btn btn-align-right btn-align-left" disabled>&nbsp;</button
+                        ><button id="nav-right-button" type="button" class="btn btn-align-left" onclick="gotoNextLayer()"><i class="fa fa-chevron-right"></i></button>
+                        </div>
+                      <p>El siguiente Modelo es tomado de la pagina https://maps.s5p-pal.com
+                        Este mapa mide promedios de 14 dias de dioxido de nitrogeno proveniente de las combustion de
+                        fosiles en procesos industriales.
+                        El modelo esta elaborado apartir de la información recopilada en el servicio que proporciona como
+                        parte del Laboratorio de Algoritmo de Producto Sentinel-5P (S5P-PAL)
+                        Para modificar la fecha de las emisiones, debes dar click en el boton izquierdo de la barra
+                        que contiene la fecha, este dara saltos de fecha cada 14 días. </p>                 
+                  </div>
+              </div>
+  
+              <div class="icon-main">
+                    <h3 class="fw_400 center" >mapa de calidad del aire en tiempo real</h3>
+                    
+                   <div class="map" style="width: 600px; height: 400px;" id="mapid">
+                                          
+                    </div> 
+                    
+                    <h4 class="center"></h4>
+                          <form class="center">
+
+                              <!--<label for="ciudad">Ciudad</label>
+                              <input type="text" id="ciudad" placeholder="Ejm Bogota" required>
+                              <input type="submit">
+                              <button id = "ciudades"> Enviar</button>-->
+                              <span class="ocultar" id="city-aqi-container2"></span> 
+                    
+                    <h3 class="fw_400 center">La siguiente tabla define la escala del Índice de calidad del aire según lo definido por el estándar US-EPA 2016:</h3>               
+                    <img src="img/rangos.PNG" alt="rangos">
+                    
+              </div>
+              <div class="icono-main">
+                    <div class="contenedor2 contenido-lateral">
+                          <h3 class="fw_400 center">ciudades que presentan altos niveles de contaminacion</h3>
+                          <div class="">
+                            <span class="ocultar" id="city-aqi-container1"></span> 
+                               
+                          </div>
+                             
+                          <h3 class="fw_400 center">Referencias</h3>
+                          <p>Los datos de calidad del aire pertenecea al modelo de datos abiertos manejado por
+                            aqicn.org y algunas organizaciones aliadas. puedes revisar los datos en la siguiente direccion
+
+                          </p>  
+                           <a href="https://aqicn.org/map/world/" target="blank">aqicn.org</a>
+
+                          
+                          
+  
+                                        
+                    </div>
+              </div>
+         
+          </div>
+            
+        </section>
+        
+      </main>
+      <footer class="site-footer main">
+        <div class="contenedor contenedor-footer">
+            <nav class="navegacion">
+              <a href="#">contacto</a>
+              <a href="#">Mas Informacion</a>
+              <a href="#">Foro</a>
+            </nav>
+        </div>  
+      </footer>
+</body>
+<script src="main.js"></script>
+<script src="./JS/mapToposferico.js"></script>
+
+<script src="widget.js"></script>
+
+
+
+</html>

@@ -1,0 +1,221 @@
+html{
+    font-size: 62.5%;
+}
+/*estilos globales*/
+body{
+    font-family: 'Merriweather', serif;
+    background-color: #ae9498;
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+    
+
+}
+.contenedor2{
+    border: 1px solid black;
+    background-color: white;
+}
+/*utilidades*/
+p{
+    padding: 0 1rem;
+}
+h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+.fw_400{
+    font-weight: 400;
+    text-transform: uppercase;
+    font-style: italic;
+}
+.center{
+    text-align: center;
+}
+.boton{
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    
+    
+
+}
+.change-boton{
+    background-color: sandybrown;
+    font-weight: 700;
+    
+    
+}
+/*fin utilidades*/
+
+
+.inicio {
+    background: url(../img/portada1.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 10vh;
+    max-height:50rem;
+    min-height: 5rem;
+  
+  }
+  .fin{
+    background-color: rgba(23, 81, 3, 0.503);
+   
+    /*background-position: center center;
+    background-size: cover;
+    height: 25vh;
+    max-height:15rem;
+    min-height: 5rem;*/
+  }
+  /*.barra-final{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 3rem;
+    background-color: rgba(23, 81, 3, 0.503);
+
+  }*/
+  .contenido-header{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+        }
+ .barra{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-top: 1rem;
+ }
+ .barra2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+}
+
+ .barra a{
+    color: #047216;
+    text-decoration: none;
+    font-size: 4rem;
+    margin-right: 2rem;
+ }
+ /*navegacion*/
+ .navegacion a{
+     color: #047216;
+     text-decoration: none;
+     font-size: 1.5rem;
+     margin-right: 2rem;
+
+ }
+ .navegacion a:hover{
+     color: rgb(230, 172, 15);
+ }
+ .navegacion a:last-of-type{
+     margin-right: 0;
+ }
+ /*.navegacion-final a{
+    color: #a10909;
+    text-decoration: none;
+    font-size: 1.8rem;
+    margin-right: 2rem;
+
+}*/
+.contenido-lateral{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+}
+.main{
+    display: flex;
+    margin-top: .8rem;
+    justify-content: space-between;
+}
+.icono-main{
+    display: flex;
+    justify-content: space-between;
+}
+/*footer*/
+.site-footer{
+    background-color: slategray;
+    margin: 0;
+
+}
+.contenedor-footer{
+    padding: 1rem;
+}
+
+#map {
+    width: 100%;
+    padding-top: 70%;
+    margin-top: 15px;
+  }
+.navigation {
+    width: 272px;
+    margin: auto;
+    white-space: nowrap;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  .btn {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    padding: .375rem .6rem;
+    font-size: 0.9rem;
+    line-height: 1;
+    border-radius: .25rem;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    margin: -1px;
+    margin-bottom: 5px;
+  }
+  .btn-align-left {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .btn-align-right {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .btn:enabled:focus, .btn:enabled:hover {
+    text-decoration: none;
+    color: #212529;
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+  }
+  .nav-ref {
+    width: 20rem;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+    
+  }
+  /*.mapctl {
+    padding: 2px 10px 2px 10px;
+    background: white;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    text-align: right;
+  }*/
+  .maptitle {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Merriweather', serif;
+  }
+  .leaflet-container .leaflet-control-attribution {
+    font-size: .8rem;
+  }
+  #toggle-content {
+    display: none;
+  }
+  img {
+    width: 10%;;
+    height: 10%;
+    margin: 0 auto;
+  }
